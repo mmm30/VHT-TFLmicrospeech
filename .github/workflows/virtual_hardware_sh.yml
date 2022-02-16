@@ -4,8 +4,8 @@
 name: Arm Virtual Hardware example - self-hosted (AWS) runner
 
 on:
-#  push:
-#    branches: [ main ]
+  push:
+    branches: [ main ]
 #  pull_request:
 #    branches: [ main ]
 
@@ -18,15 +18,15 @@ jobs:
     env:
       working-directory: ${{ github.workspace }}/Platform_FVP_Corstone_SSE-300_Ethos-U55/
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
+#      - name: Check out repository code
+ #       uses: actions/checkout@v2
 
-      - name: What has been cloned?
-        run: echo "${{ github.repository }} has been cloned."
+#      - name: What has been cloned?
+ #       run: echo "${{ github.repository }} has been cloned."
 
-      - name: Get dependencies
-        run: cp_install.sh packlist
-        working-directory: ${{env.working-directory}}
+#      - name: Get dependencies
+ #       run: cp_install.sh packlist
+  #      working-directory: ${{env.working-directory}}
 
       - name: Build the micro_speech example
         run: cbuild.sh microspeech.Example.cprj
